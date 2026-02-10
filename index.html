@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="YGzCw5QHep9uFxxExBC-ctulgVMr9XMGKdnGxHP66YY" />
+
+  <title>Assistente de Textos para Negócios</title>
+  <meta name="description" content="Ferramenta de apoio à escrita para pequenos empreendedores no Brasil." />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+  <!-- ONBOARDING -->
+  <section id="onboarding" class="screen">
+    <h1>Bem-vindo 👋</h1>
+    <p>Responda para personalizar sua experiência</p>
+
+    <input id="produto" placeholder="Seu produto ou serviço" />
+    <input id="publico" placeholder="Seu público-alvo" />
+    <select id="tom">
+      <option value="simples">Simples</option>
+      <option value="profissional">Profissional</option>
+      <option value="vendedor">Vendedor</option>
+    </select>
+
+    <button onclick="salvarOnboarding()">Continuar</button>
+  </section>
+
+  <!-- HOME -->
+  <section id="home" class="screen hidden">
+    <h2>Gerar texto</h2>
+
+    <select id="tipoTexto">
+      <option>Legenda Instagram</option>
+      <option>Texto de anúncio</option>
+      <option>Mensagem WhatsApp</option>
+      <option>Roteiro curto de vídeo</option>
+    </select>
+
+    <button onclick="gerarTexto()">Gerar</button>
+
+    <textarea id="resultado" placeholder="Seu texto aparece aqui"></textarea>
+
+    <a href="#" onclick="abrirModelos()">Ver modelos prontos</a>
+  </section>
+
+  <!-- MODELOS -->
+  <section id="modelos" class="screen hidden">
+    <h2>Modelos Prontos</h2>
+
+    <h3>Gratuitos</h3>
+    <ul id="modelosGratis"></ul>
+
+    <h3>Premium <span class="pro">PRO</span></h3>
+    <ul id="modelosPremium"></ul>
+
+    <button onclick="voltarHome()">Voltar</button>
+  </section>
+
+  <!-- PERFIL -->
+  <section id="perfil" class="screen hidden">
+    <h2>Perfil</h2>
+    <button onclick="resetarOnboarding()">Editar onboarding</button>
+    <button class="danger" onclick="excluirConta()">Excluir conta</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
