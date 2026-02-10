@@ -9,74 +9,81 @@
 
   <title>Assistente de Textos para Negócios</title>
   <meta name="description" content="Ferramenta de apoio à escrita para pequenos empreendedores no Brasil." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
 </head>
+
 <body>
+  <!-- APP CONTAINER -->
+  <div class="app">
 
-  <!-- ONBOARDING -->
-  <section id="onboarding" class="screen">
-    <h1>Bem-vindo 👋</h1>
-    <p>Responda para personalizar sua experiência</p>
+    <!-- ONBOARDING -->
+    <section id="onboarding" class="screen">
+      <h1>Bem-vindo 👋</h1>
+      <p>Responda para personalizar sua experiência</p>
 
-    <input id="produto" placeholder="Seu produto ou serviço" />
-    <input id="publico" placeholder="Seu público-alvo" />
-    <select id="tom">
-      <option value="simples">Simples</option>
-      <option value="profissional">Profissional</option>
-      <option value="vendedor">Vendedor</option>
-    </select>
+      <input id="produto" placeholder="Seu produto ou serviço" />
+      <input id="publico" placeholder="Seu público-alvo" />
+      <select id="tom">
+        <option value="simples">Simples</option>
+        <option value="profissional">Profissional</option>
+        <option value="vendedor">Vendedor</option>
+      </select>
 
-    <button onclick="salvarOnboarding()">Continuar</button>
-  </section>
+      <button onclick="salvarOnboarding()">Continuar</button>
+    </section>
 
-  <!-- HOME -->
-  <section id="home" class="screen hidden">
-    <h2>Gerar texto</h2>
+    <!-- HOME -->
+    <section id="home" class="screen hidden">
+      <h2>Gerar texto</h2>
 
-    <select id="tipoTexto">
-      <option>Legenda Instagram</option>
-      <option>Texto de anúncio</option>
-      <option>Mensagem WhatsApp</option>
-      <option>Roteiro curto de vídeo</option>
-    </select>
+      <select id="tipoTexto">
+        <option>Legenda Instagram</option>
+        <option>Texto de anúncio</option>
+        <option>Mensagem WhatsApp</option>
+        <option>Roteiro curto de vídeo</option>
+      </select>
 
-    <button onclick="gerarTexto()">Gerar</button>
+      <button onclick="gerarTexto()">Gerar</button>
 
-    <textarea id="resultado" placeholder="Seu texto aparece aqui"></textarea>
+      <textarea id="resultado" placeholder="Seu texto aparece aqui"></textarea>
 
-    <a href="#" onclick="abrirModelos()">Ver modelos prontos</a>
-  </section>
+      <a href="#" onclick="abrirModelos()">Ver modelos prontos</a>
+    </section>
 
-  <!-- MODELOS -->
-  <section id="modelos" class="screen hidden">
-    <h2>Modelos Prontos</h2>
+    <!-- MODELOS -->
+    <section id="modelos" class="screen hidden">
+      <h2>Modelos Prontos</h2>
 
-    <h3>Gratuitos</h3>
-    <ul id="modelosGratis"></ul>
+      <h3>Gratuitos</h3>
+      <ul id="modelosGratis"></ul>
 
-    <h3>Premium <span class="pro">PRO</span></h3>
-    <ul id="modelosPremium"></ul>
+      <h3>Premium <span class="pro">PRO</span></h3>
+      <ul id="modelosPremium"></ul>
 
-    <button onclick="voltarHome()">Voltar</button>
-  </section>
+      <button onclick="voltarHome()">Voltar</button>
+    </section>
 
-  <!-- PERFIL -->
-  <section id="perfil" class="screen hidden">
-    <h2>Perfil</h2>
-    <button onclick="resetarOnboarding()">Editar onboarding</button>
-    <button class="danger" onclick="excluirConta()">Excluir conta</button>
-  </section>
+    <!-- PERFIL -->
+    <section id="perfil" class="screen hidden">
+      <h2>Perfil</h2>
+      <button onclick="resetarOnboarding()">Editar onboarding</button>
+      <button class="danger" onclick="excluirConta()">Excluir conta</button>
+    </section>
+
+  </div>
+  <!-- /APP CONTAINER -->
 
   <script src="script.js"></script>
   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js");
-  }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
   </script>
 </body>
 </html>
